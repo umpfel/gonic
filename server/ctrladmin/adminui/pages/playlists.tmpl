@@ -1,0 +1,44 @@
+{{ component "layout" . }}
+{{ component "layout_user" . }}
+
+{{ component "block" (props .
+    "Icon" "list"
+    "Name" "playlists"
+    "Desc" "manage your playlists — view, edit, download, and upload m3u files"
+) }}
+    <div class="grid grid-cols-[repeat(3,auto)_max-content] md:grid-cols-[auto_repeat(4,min-content)] gap-2 gap-x-5 items-center text-right">
+        {{ if eq (len .Playlists) 0 }}
+            <div class="col-span-full text-gray-500">no playlists found</div>
+        {{ end }}
+        {{ range $item := .Playlists }}
+            {{ $viewURL      := printf "/admin/playlist?path=%s"         ($item.RelPath | urlquery) | path }}
+            {{ $dlURL        := printf "/admin/playlist_download?path=%s" ($item.RelPath | urlquery) | path }}
+            {{ $confirmURL   := printf "/admin/playlist_delete?path=%s"  ($item.RelPath | urlquery) | path }}
+            <div class="col-span-3 md:col-auto text-left ellipsis">
+                <a class="text-blue-500" href="{{ $viewURL }}">{{ $item.Playlist.Name }}<span class="hidden md:inline">&#8230;</span></a>
+            </div>
+            <div class="text-gray-500 whitespace-nowrap">{{ len $item.Playlist.Items }} tracks</div>
+            <div class="text-gray-500 whitespace-nowrap">{{ $item.Playlist.UpdatedAt | date }}</div>
+            <a class="text-blue-500" href="{{ $dlURL }}">download<span class="hidden md:inline">&#8230;</span></a>
+            {{ component "link" (props . "To" $confirmURL) }}delete{{ end }}
+        {{ end }}
+    </div>
+{{ end }}
+
+{{ component "block" (props .
+    "Icon" "music"
+    "Name" "upload playlist"
+    "Desc" "upload an m3u file as a new playlist"
+) }}
+    <form class="flex flex-col md:flex-row gap-2 items-end" action="{{ path "/admin/playlist_upload_do" }}" method="post" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="playlist name">
+        <div class="relative pointer-events-auto">
+            <input class="absolute opacity-0" name="file" type="file" accept=".m3u,.m3u8" onchange="this.nextElementSibling.value=this.files[0]?.name??'choose file'">
+            <input type="button" value="choose file">
+        </div>
+        <input type="submit" value="upload">
+    </form>
+{{ end }}
+
+{{ end }}
+{{ end }}

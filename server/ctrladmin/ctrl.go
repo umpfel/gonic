@@ -27,6 +27,7 @@ import (
 	"go.senan.xyz/gonic/db"
 	"go.senan.xyz/gonic/handlerutil"
 	"go.senan.xyz/gonic/lastfm"
+	"go.senan.xyz/gonic/playlist"
 	"go.senan.xyz/gonic/podcast"
 	"go.senan.xyz/gonic/scanner"
 	"go.senan.xyz/gonic/server/ctrladmin/adminui"
@@ -48,12 +49,15 @@ type Controller struct {
 	scanner          *scanner.Scanner
 	podcasts         *podcast.Podcasts
 	lastfmClient     *lastfm.Client
+	playlistStore    *playlist.Store
+	musicPaths       []string
+	podcastsPath     string
 	resolveProxyPath ProxyPathResolver
 }
 
 type ProxyPathResolver func(in string) string
 
-func New(dbc *db.DB, sessDB *gormstore.Store, scanner *scanner.Scanner, podcasts *podcast.Podcasts, lastfmClient *lastfm.Client, resolveProxyPath ProxyPathResolver) (*Controller, error) {
+func New(dbc *db.DB, sessDB *gormstore.Store, scanner *scanner.Scanner, podcasts *podcast.Podcasts, lastfmClient *lastfm.Client, playlistStore *playlist.Store, musicPaths []string, podcastsPath string, resolveProxyPath ProxyPathResolver) (*Controller, error) {
 	c := Controller{
 		ServeMux: http.NewServeMux(),
 
@@ -62,6 +66,9 @@ func New(dbc *db.DB, sessDB *gormstore.Store, scanner *scanner.Scanner, podcasts
 		scanner:          scanner,
 		podcasts:         podcasts,
 		lastfmClient:     lastfmClient,
+		playlistStore:    playlistStore,
+		musicPaths:       musicPaths,
+		podcastsPath:     podcastsPath,
 		resolveProxyPath: resolveProxyPath,
 	}
 
@@ -103,6 +110,18 @@ func New(dbc *db.DB, sessDB *gormstore.Store, scanner *scanner.Scanner, podcasts
 	c.Handle("/delete_transcode_pref_do", userChain(resp(c.ServeDeleteTranscodePrefDo)))
 	c.Handle("/create_transcode_format_pref_do", userChain(resp(c.ServeCreateTranscodeFormatPrefDo)))
 	c.Handle("/delete_transcode_format_pref_do", userChain(resp(c.ServeDeleteTranscodeFormatPrefDo)))
+
+	// playlist management routes (user-scoped)
+	c.Handle("/playlists", userChain(resp(c.ServeGetPlaylists)))
+	c.Handle("/playlist", userChain(resp(c.ServeGetPlaylist)))
+	c.Handle("/playlist_delete", userChain(resp(c.ServeGetDeletePlaylist)))
+	c.Handle("/playlist_delete_do", userChain(resp(c.ServeDeletePlaylist)))
+	c.Handle("/playlist_raw_edit_do", userChain(resp(c.ServeRawEditPlaylist)))
+	c.Handle("/playlist_delete_entry_do", userChain(resp(c.ServeDeleteEntry)))
+	c.Handle("/playlist_replace_entry_do", userChain(resp(c.ServeReplaceEntry)))
+	c.Handle("/playlist_search", userChain(resp(c.ServePlaylistSearch)))
+	c.Handle("/playlist_download", userChain(http.HandlerFunc(c.ServePlaylistDownload)))
+	c.Handle("/playlist_upload_do", userChain(resp(c.ServePlaylistUpload)))
 
 	// admin routes (if session is valid, and is admin)
 	c.Handle("/create_user", adminChain(resp(c.ServeCreateUser)))
@@ -304,10 +323,21 @@ type templateData struct {
 
 	// avatar
 	Avatar []byte
+
+	// playlists
+	Playlists     []PlaylistListItem
+	Playlist      *playlist.Playlist
+	PlaylistItems []PlaylistItem
+	TrackResults  []TrackResult
+	SearchQuery   string
+	PlaylistPath  string
+	PlaylistRaw   string
+	EntryIndex    int
 }
 
 func funcMap() template.FuncMap {
 	return template.FuncMap{
+		"urlquery": url.QueryEscape,
 		"str": func(in any) string {
 			v, _ := json.Marshal(in)
 			return string(v)

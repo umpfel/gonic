@@ -85,6 +85,35 @@ func (s *Store) List() ([]string, error) {
 	})
 }
 
+// ListByUser finds playlist paths belonging to a single user, walking only
+// their subdirectory rather than the entire store.
+func (s *Store) ListByUser(userID int) ([]string, error) {
+	defer lock(&s.mu)()
+
+	userDir := filepath.Join(s.basePath, strconv.Itoa(userID))
+	var relPaths []string
+	err := filepath.WalkDir(userDir, func(path string, d fs.DirEntry, err error) error {
+		if err != nil {
+			if os.IsNotExist(err) {
+				return nil
+			}
+			return err
+		}
+		if d.IsDir() {
+			return nil
+		}
+		switch filepath.Ext(path) {
+		case extM3U, extM3U8:
+		default:
+			return nil
+		}
+		relPath, _ := filepath.Rel(s.basePath, path)
+		relPaths = append(relPaths, relPath)
+		return nil
+	})
+	return relPaths, err
+}
+
 func (s *Store) Read(relPath string) (*Playlist, error) {
 	defer lock(&s.mu)()
 

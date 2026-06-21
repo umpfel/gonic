@@ -273,7 +273,7 @@ func main() {
 		return url.String()
 	}
 
-	ctrlAdmin, err := ctrladmin.New(dbc, sessDB, scannr, podcast, lastfmClient, resolveProxyPath)
+	ctrlAdmin, err := ctrladmin.New(dbc, sessDB, scannr, podcast, lastfmClient, playlistStore, ctrlsubsonic.MusicPaths(musicPaths), *confPodcastPath, resolveProxyPath)
 	if err != nil {
 		log.Panicf("error creating admin controller: %v\n", err)
 	}

@@ -1,0 +1,70 @@
+{{ component "layout" . }}
+{{ component "layout_user" . }}
+
+{{ component "block" (props .
+    "Icon" "music"
+    "Name" .Playlist.Name
+    "Desc" .Playlist.Comment
+) }}
+    {{ $dlURL      := printf "/admin/playlist_download?path=%s" (.PlaylistPath | urlquery) | path }}
+    {{ $backURL    := path "/admin/playlists" }}
+    <div class="text-gray-500 text-left space-y-2">
+        <div>{{ len .Playlist.Items }} entries
+            {{ if .Playlist.IsPublic }}&middot; public{{ else }}&middot; private{{ end }}
+            &middot; <a class="text-blue-500" href="{{ $dlURL }}">download m3u</a>
+            &middot; <a class="text-blue-500" href="{{ $backURL }}">back<span class="hidden md:inline">&#8230;</span></a>
+        </div>
+    </div>
+    <div class="grid grid-cols-[1fr_1fr_min-content_min-content] gap-2 gap-x-5 items-center mt-3">
+        {{ if eq (len .PlaylistItems) 0 }}
+            <div class="col-span-full text-gray-500">playlist is empty</div>
+        {{ end }}
+        {{ $pp := .PlaylistPath }}
+        {{ range $item := .PlaylistItems }}
+            {{ $deleteURL := printf "/admin/playlist_delete_entry_do?path=%s&index=%d" ($pp | urlquery) $item.Index | path }}
+            {{ $searchURL := printf "/admin/playlist_search?path=%s&index=%d"          ($pp | urlquery) $item.Index | path }}
+            {{ if $item.Missing }}
+                <div class="text-left ellipsis text-red-400">{{ $item.Path | base }}</div>
+                <div class="text-left text-red-400 whitespace-nowrap">(missing)</div>
+            {{ else }}
+                <div class="text-left whitespace-nowrap ellipsis">
+                    {{ if $item.Track }}{{ $item.Track.TagTrackArtist }}{{ end }}
+                </div>
+                <div class="text-left ellipsis">
+                    {{ if $item.Track }}{{ if $item.Track.TagTitle }}{{ $item.Track.TagTitle }}{{ else }}{{ $item.Track.Filename }}{{ end }}{{ else }}{{ $item.Path | base }}{{ end }}
+                </div>
+            {{ end }}
+            <form class="contents" action="{{ $deleteURL }}" method="post">
+                <input type="submit" value="delete">
+            </form>
+            {{ if $item.Missing }}
+                <a class="text-blue-500" href="{{ $searchURL }}">replace<span class="hidden md:inline">&#8230;</span></a>
+            {{ else }}
+                <div></div>
+            {{ end }}
+        {{ end }}
+    </div>
+{{ end }}
+
+{{ component "block" (props .
+    "Icon" "list"
+    "Name" "raw edit"
+    "Desc" "edit the playlist as plain text, one path per line"
+) }}
+    {{ $rawEditURL := printf "/admin/playlist_raw_edit_do?path=%s" (.PlaylistPath | urlquery) | path }}
+    <form class="flex flex-col gap-2" action="{{ $rawEditURL }}" method="post">
+        <textarea name="raw" rows="15" class="font-mono text-sm text-left w-full">{{ .PlaylistRaw }}</textarea>
+        <input type="submit" value="save" class="ml-auto">
+    </form>
+{{ end }}
+
+{{ component "block" (props .
+    "Icon" "list"
+    "Name" "delete playlist"
+) }}
+    {{ $confirmURL := printf "/admin/playlist_delete?path=%s" (.PlaylistPath | urlquery) | path }}
+    {{ component "link" (props . "To" $confirmURL) }}delete{{ end }}
+{{ end }}
+
+{{ end }}
+{{ end }}

@@ -1,0 +1,46 @@
+{{ component "layout" . }}
+{{ component "layout_user" . }}
+
+{{ component "block" (props .
+    "Icon" "music"
+    "Name" (printf "replace entry in %s" .Playlist.Name)
+    "Desc" "search for a replacement track — use * as a wildcard"
+) }}
+    {{ $backURL := printf "/admin/playlist?path=%s" (.PlaylistPath | urlquery) | path }}
+    <div class="text-gray-500 text-left space-y-2">
+        <a class="text-blue-500" href="{{ $backURL }}">back to playlist<span class="hidden md:inline">&#8230;</span></a>
+    </div>
+    <form class="flex flex-col md:flex-row gap-2 items-end" action="{{ path "/admin/playlist_search" }}" method="get">
+        <input type="hidden" name="path" value="{{ .PlaylistPath }}">
+        <input type="hidden" name="index" value="{{ .EntryIndex }}">
+        <input type="text" name="q" value="{{ .SearchQuery }}" placeholder="title or filename">
+        <input type="submit" value="search">
+    </form>
+
+    {{ if .SearchQuery }}
+        {{ if eq (len .TrackResults) 0 }}
+            <div class="text-gray-500 mt-3 text-left">no tracks found for "{{ .SearchQuery }}"</div>
+        {{ else }}
+            <div class="grid grid-cols-[1fr_1fr_min-content_min-content] gap-2 gap-x-5 items-center mt-3">
+                {{ $pp    := .PlaylistPath }}
+                {{ $index := .EntryIndex }}
+                {{ range $result := .TrackResults }}
+                    {{ $replaceURL := printf "/admin/playlist_replace_entry_do?path=%s&index=%d&track_path=%s" ($pp | urlquery) $index ($result.AbsPath | urlquery) | path }}
+                    <div class="text-left ellipsis">
+                        {{ if $result.Track.TagTitle }}{{ $result.Track.TagTitle }}{{ else }}{{ $result.Track.Filename }}{{ end }}
+                    </div>
+                    <div class="text-gray-500 whitespace-nowrap ellipsis">{{ $result.Track.TagTrackArtist }}</div>
+                    <div class="text-gray-500 whitespace-nowrap">
+                        {{ if $result.Track.Album }}{{ $result.Track.Album.TagTitle }}{{ end }}
+                    </div>
+                    <form class="contents" action="{{ $replaceURL }}" method="post">
+                        <input type="submit" value="use this">
+                    </form>
+                {{ end }}
+            </div>
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ end }}
+{{ end }}
