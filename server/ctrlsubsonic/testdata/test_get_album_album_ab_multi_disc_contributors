@@ -1,7 +1,7 @@
 {
   "subsonic-response": {
     "status": "ok",
-    "version": "1.15.0",
+    "version": "1.16.1",
     "type": "gonic",
     "serverVersion": "",
     "openSubsonic": true,
@@ -24,6 +24,7 @@
       "songCount": 2,
       "duration": 200,
       "playCount": 2,
+      "played": "2020-08-02T12:00:00Z",
       "genre": "Rock",
       "genres": [
         {
@@ -120,6 +121,7 @@
               }
             }
           ],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "coverArt": "al-4",
@@ -143,6 +145,7 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2019,
           "musicBrainzId": "00000000-0000-0000-0000-ab00000000d1",
           "isrc": [],
@@ -150,7 +153,8 @@
           "userRating": 3,
           "averageRating": 4.33,
           "replayGain": null,
-          "playCount": 1
+          "playCount": 1,
+          "played": "2020-08-02T12:00:00Z"
         },
         {
           "id": "tr-5",
@@ -216,6 +220,7 @@
               }
             }
           ],
+          "displayComposer": "Composer C!",
           "bitRate": 100,
           "contentType": "audio/flac",
           "coverArt": "al-4",
@@ -236,11 +241,13 @@
           "track": 1,
           "discNumber": 2,
           "type": "music",
+          "mediaType": "song",
           "year": 2019,
           "musicBrainzId": "",
           "isrc": [],
           "replayGain": null,
-          "playCount": 1
+          "playCount": 1,
+          "played": "2020-08-02T12:00:00Z"
         }
       ],
       "isCompilation": false,
@@ -265,6 +272,8 @@
           "title": "Disc Two"
         }
       ],
+      "musicBrainzId": "00000000-0000-0000-0000-0000000000ab",
+      "version": "Deluxe Edition",
       "averageRating": 5
     }
   }

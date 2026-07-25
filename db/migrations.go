@@ -99,6 +99,10 @@ func (db *DB) Migrate(ctx MigrationContext) error {
 		construct(ctx, "202606051200", migrateDropAverageRating),
 		construct(ctx, "202606091200", migrateArtistInfoFieldsBySource),
 		construct(ctx, "202606091300", migrateAlbumInfoMusicBrainzDisambiguation),
+		construct(ctx, "202607141400", migrateTrackComposer),
+		construct(ctx, "202607141500", migrateAlbumVersion),
+		construct(ctx, "202607171200", migrateAddPodcastEpisodeGUID),
+		construct(ctx, "202607241200", migrateClearUnknownAudioProperties),
 	}
 
 	return gormigrate.
@@ -1062,6 +1066,10 @@ func migrateArtistInfoFieldsBySource(tx *gorm.DB, _ MigrationContext) error {
 	return tx.AutoMigrate(ArtistInfo{}).Error
 }
 
+func migrateAlbumVersion(tx *gorm.DB, _ MigrationContext) error {
+	return tx.AutoMigrate(Album{}).Error
+}
+
 func migrateAlbumInfoMusicBrainzDisambiguation(tx *gorm.DB, _ MigrationContext) error {
 	// rename the existing lastfm-sourced column to be source-prefixed. must run before AutoMigrate,
 	// else AutoMigrate creates the new name empty (from the current struct) and the rename collides.
@@ -1071,4 +1079,23 @@ func migrateAlbumInfoMusicBrainzDisambiguation(tx *gorm.DB, _ MigrationContext) 
 		}
 	}
 	return tx.AutoMigrate(AlbumInfo{}).Error
+}
+
+func migrateTrackComposer(tx *gorm.DB, _ MigrationContext) error {
+	return tx.AutoMigrate(Track{}).Error
+}
+
+func migrateAddPodcastEpisodeGUID(tx *gorm.DB, _ MigrationContext) error {
+	return tx.AutoMigrate(PodcastEpisode{}).Error
+}
+
+func migrateClearUnknownAudioProperties(tx *gorm.DB, _ MigrationContext) error {
+	// taglib returns -1 for unknown properties, which older go-taglib versions stored as uint32 max.
+	// bitrate kept the raw value, length went through ms -> seconds first.
+	return tx.Exec(`
+		UPDATE tracks SET bitrate=0 WHERE bitrate=4294967295;
+		UPDATE tracks SET length=0 WHERE length=4294967;
+		UPDATE podcast_episodes SET bitrate=0 WHERE bitrate=4294967295;
+		UPDATE podcast_episodes SET length=0 WHERE length=4294967;
+	`).Error
 }

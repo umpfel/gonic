@@ -59,6 +59,8 @@ func NewAlbumByTags(a *AlbumRow, credits []*db.AlbumCredit) *Album {
 		AverageRating: a.AverageRating,
 		IsCompilation: a.TagCompilation,
 		ReleaseTypes:  formatReleaseTypes(a.TagReleaseType),
+		MusicBrainzID: a.TagBrainzID,
+		Version:       a.TagVersion,
 		RecordLabels:  []*RecordLabel{},
 		DiscTitles:    []*DiscTitle{},
 	}
@@ -100,6 +102,7 @@ func NewAlbumByTags(a *AlbumRow, credits []*db.AlbumCredit) *Album {
 		ret.RecordLabels = append(ret.RecordLabels, &RecordLabel{Name: l.Label})
 	}
 	ret.PlayCount = int(math.Ceil(a.PlayCount))
+	ret.Played = Time{a.PlayTime.Time}
 	if len(a.DiscTitles) > 0 {
 		sort.Slice(a.DiscTitles, func(i, j int) bool {
 			return a.DiscTitles[i].DiscNumber < a.DiscTitles[j].DiscNumber
@@ -124,6 +127,7 @@ func NewTrackByTags(client string, t *TrackRow, album *db.Album) *TrackChild {
 		AlbumArtists:       []*ArtistRef{},
 		AlbumDisplayArtist: cmp.Or(album.TagAlbumArtistCredit, album.TagAlbumArtist),
 		Contributors:       []*Contributor{},
+		DisplayComposer:    cmp.Or(t.TagComposerCredit, t.TagComposer),
 		Bitrate:            t.Bitrate,
 		ContentType:        t.MIME(),
 		CreatedAt:          t.CreatedAt,
@@ -137,7 +141,8 @@ func NewTrackByTags(client string, t *TrackRow, album *db.Album) *TrackChild {
 		Title:              cmp.Or(t.TagTitle, t.Filename),
 		TrackNumber:        t.TagTrackNumber,
 		DiscNumber:         t.TagDiscNumber,
-		Type:               "music",
+		Type:               TypeMusic,
+		MediaType:          MediaTypeSong,
 		MusicBrainzID:      t.TagBrainzID,
 		AverageRating:      t.AverageRating,
 		TranscodeMeta:      TranscodeMeta{},
@@ -161,6 +166,7 @@ func NewTrackByTags(client string, t *TrackRow, album *db.Album) *TrackChild {
 	}
 	if t.Play != nil {
 		ret.PlayCount = int(math.Ceil(t.Play.Count))
+		ret.Played = Time{t.Play.Time}
 	}
 
 	trackArtists := filterTrackCreditsByRole(t.Credits, db.RoleArtist)
@@ -254,8 +260,11 @@ func NewArtistByTags(a *ArtistRow) *Artist {
 		Albums:        []*Album{},
 		AverageRating: a.AverageRating,
 	}
-	if a.Info != nil && a.Info.ImageURL != "" {
-		r.CoverID = a.SID()
+	if a.Info != nil {
+		r.Disambiguation = a.Info.MusicBrainzDisambiguation
+		if a.Info.ImageURL != "" {
+			r.CoverID = a.SID()
+		}
 	}
 	if a.ArtistStar != nil {
 		r.Starred = &a.ArtistStar.StarDate

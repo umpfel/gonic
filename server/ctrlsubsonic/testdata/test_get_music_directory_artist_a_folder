@@ -1,7 +1,7 @@
 {
   "subsonic-response": {
     "status": "ok",
-    "version": "1.15.0",
+    "version": "1.16.1",
     "type": "gonic",
     "serverVersion": "",
     "openSubsonic": true,
@@ -18,16 +18,19 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "created": "2019-11-30T00:00:00Z",
           "genres": [],
           "isDir": true,
           "isVideo": false,
           "parent": "al-2",
           "title": "empty-album",
+          "mediaType": "album",
           "year": 2015,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "al-3",
@@ -37,19 +40,22 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "created": "2019-11-30T00:00:00Z",
           "genres": [],
           "isDir": true,
           "isVideo": false,
           "parent": "al-2",
           "title": "album-aa",
+          "mediaType": "album",
           "year": 2018,
           "musicBrainzId": "",
           "isrc": [],
           "starred": "2020-05-01T12:00:00Z",
           "userRating": 4,
           "averageRating": 4,
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "al-4",
@@ -59,6 +65,7 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "coverArt": "al-4",
           "created": "2019-11-30T00:00:00Z",
           "genres": [],
@@ -66,11 +73,13 @@
           "isVideo": false,
           "parent": "al-2",
           "title": "album-ab",
+          "mediaType": "album",
           "year": 2019,
           "musicBrainzId": "",
           "isrc": [],
           "averageRating": 5,
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         }
       ]
     }

@@ -1,7 +1,7 @@
 {
   "subsonic-response": {
     "status": "ok",
-    "version": "1.15.0",
+    "version": "1.16.1",
     "type": "gonic",
     "serverVersion": "",
     "openSubsonic": true,
@@ -15,19 +15,22 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "created": "2019-11-30T00:00:00Z",
           "genres": [],
           "isDir": true,
           "isVideo": false,
           "parent": "al-2",
           "title": "album-aa",
+          "mediaType": "album",
           "year": 2018,
           "musicBrainzId": "",
           "isrc": [],
           "starred": "2020-05-01T12:00:00Z",
           "userRating": 4,
           "averageRating": 4,
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         }
       ]
     }

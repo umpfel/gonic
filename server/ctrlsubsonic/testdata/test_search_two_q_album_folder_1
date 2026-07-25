@@ -1,7 +1,7 @@
 {
   "subsonic-response": {
     "status": "ok",
-    "version": "1.15.0",
+    "version": "1.16.1",
     "type": "gonic",
     "serverVersion": "",
     "openSubsonic": true,
@@ -15,16 +15,19 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "created": "2019-11-30T00:00:00Z",
           "genres": [],
           "isDir": true,
           "isVideo": false,
           "parent": "al-14",
           "title": "album-cross",
+          "mediaType": "album",
           "year": 2022,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         }
       ]
     }

@@ -1,7 +1,7 @@
 {
   "subsonic-response": {
     "status": "ok",
-    "version": "1.15.0",
+    "version": "1.16.1",
     "type": "gonic",
     "serverVersion": "",
     "openSubsonic": true,
@@ -23,6 +23,7 @@
       "songCount": 0,
       "duration": 0,
       "playCount": 0,
+      "played": "",
       "genres": [],
       "year": 2015,
       "isCompilation": false,
@@ -30,7 +31,9 @@
         "Album"
       ],
       "recordLabels": [],
-      "discTitles": []
+      "discTitles": [],
+      "musicBrainzId": "",
+      "version": ""
     }
   }
 }

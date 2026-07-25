@@ -1,7 +1,7 @@
 {
   "subsonic-response": {
     "status": "ok",
-    "version": "1.15.0",
+    "version": "1.16.1",
     "type": "gonic",
     "serverVersion": "",
     "openSubsonic": true,
@@ -16,24 +16,32 @@
               "id": "al-2",
               "name": "artist-a",
               "albumCount": 3,
+              "musicBrainzId": "",
+              "disambiguation": "",
               "roles": []
             },
             {
               "id": "al-14",
               "name": "artist-a",
               "albumCount": 1,
+              "musicBrainzId": "",
+              "disambiguation": "",
               "roles": []
             },
             {
               "id": "al-5",
               "name": "artist-b",
               "albumCount": 1,
+              "musicBrainzId": "",
+              "disambiguation": "",
               "roles": []
             },
             {
               "id": "al-11",
               "name": "ärtist-c",
               "albumCount": 1,
+              "musicBrainzId": "",
+              "disambiguation": "",
               "roles": []
             }
           ]
@@ -45,6 +53,8 @@
               "id": "al-7",
               "name": "collab-ab",
               "albumCount": 1,
+              "musicBrainzId": "",
+              "disambiguation": "",
               "roles": []
             }
           ]
@@ -56,6 +66,8 @@
               "id": "al-9",
               "name": "split-ab",
               "albumCount": 1,
+              "musicBrainzId": "",
+              "disambiguation": "",
               "roles": []
             }
           ]
@@ -67,6 +79,8 @@
               "id": "al-16",
               "name": "various",
               "albumCount": 1,
+              "musicBrainzId": "",
+              "disambiguation": "",
               "roles": []
             }
           ]

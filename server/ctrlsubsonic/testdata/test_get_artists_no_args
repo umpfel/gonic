@@ -1,7 +1,7 @@
 {
   "subsonic-response": {
     "status": "ok",
-    "version": "1.15.0",
+    "version": "1.16.1",
     "type": "gonic",
     "serverVersion": "",
     "openSubsonic": true,
@@ -16,6 +16,8 @@
               "name": "artist-a",
               "coverArt": "ar-1",
               "albumCount": 6,
+              "musicBrainzId": "",
+              "disambiguation": "",
               "roles": [
                 "albumartist",
                 "artist"
@@ -28,6 +30,8 @@
               "id": "ar-17",
               "name": "artist-b",
               "albumCount": 3,
+              "musicBrainzId": "",
+              "disambiguation": "",
               "roles": [
                 "albumartist",
                 "artist"
@@ -37,6 +41,8 @@
               "id": "ar-18",
               "name": "ärtist-c",
               "albumCount": 1,
+              "musicBrainzId": "",
+              "disambiguation": "",
               "roles": [
                 "albumartist",
                 "artist"
@@ -51,6 +57,8 @@
               "id": "ar-19",
               "name": "Various Artists",
               "albumCount": 1,
+              "musicBrainzId": "",
+              "disambiguation": "",
               "roles": [
                 "albumartist"
               ]

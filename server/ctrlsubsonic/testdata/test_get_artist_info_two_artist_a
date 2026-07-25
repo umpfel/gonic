@@ -1,7 +1,7 @@
 {
   "subsonic-response": {
     "status": "ok",
-    "version": "1.15.0",
+    "version": "1.16.1",
     "type": "gonic",
     "serverVersion": "",
     "openSubsonic": true,
@@ -18,6 +18,8 @@
           "id": "ar-17",
           "name": "artist-b",
           "albumCount": 3,
+          "musicBrainzId": "",
+          "disambiguation": "",
           "roles": [
             "albumartist",
             "artist"

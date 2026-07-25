@@ -594,6 +594,7 @@ func populateAlbum(tx *db.DB, album *db.Album, trags map[string][]string, modTim
 	}
 	album.TagCompilation = tags.ParseBool(normtag.Get(trags, normtag.Compilation))
 	album.TagReleaseType = strings.Join(normtag.Values(trags, normtag.ReleaseType), ", ")
+	album.TagVersion = normtag.Get(trags, normtag.MusicBrainzAlbumComment)
 
 	album.ModifiedAt = modTime
 	if album.CreatedAt.After(createTime) {
@@ -644,6 +645,7 @@ func populateTrack(tx *db.DB, scanEmbeddedCover bool, album *db.Album, track *db
 	track.TagTitle, _ = tags.Read(trags, tags.TrackTitle)
 	track.TagTitleUDec = decoded(track.TagTitle)
 	track.TagTrackArtist, track.TagTrackArtistCredit = tags.Read(trags, tags.Artist)
+	track.TagComposer, track.TagComposerCredit = tags.Read(trags, tags.Composer)
 	track.TagTrackNumber = tags.ParseInt(normtag.Get(trags, normtag.TrackNumber))
 	track.TagDiscNumber = tags.ParseInt(normtag.Get(trags, normtag.DiscNumber))
 	track.TagBrainzID = normtag.Get(trags, normtag.MusicBrainzRecordingID)

@@ -1,7 +1,7 @@
 {
   "subsonic-response": {
     "status": "ok",
-    "version": "1.15.0",
+    "version": "1.16.1",
     "type": "gonic",
     "serverVersion": "",
     "openSubsonic": true,
@@ -16,6 +16,8 @@
               "id": "al-14",
               "name": "artist-a",
               "albumCount": 1,
+              "musicBrainzId": "",
+              "disambiguation": "",
               "roles": []
             }
           ]
@@ -27,6 +29,8 @@
               "id": "al-16",
               "name": "various",
               "albumCount": 1,
+              "musicBrainzId": "",
+              "disambiguation": "",
               "roles": []
             }
           ]

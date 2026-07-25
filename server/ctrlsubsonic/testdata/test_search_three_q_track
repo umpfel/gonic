@@ -1,7 +1,7 @@
 {
   "subsonic-response": {
     "status": "ok",
-    "version": "1.15.0",
+    "version": "1.16.1",
     "type": "gonic",
     "serverVersion": "",
     "openSubsonic": true,
@@ -28,6 +28,7 @@
           ],
           "displayAlbumArtist": "The Mighty B (LP)",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -47,10 +48,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2017,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-7",
@@ -81,6 +84,7 @@
           ],
           "displayAlbumArtist": "artist-a",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -100,10 +104,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2021,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-8",
@@ -134,6 +140,7 @@
           ],
           "displayAlbumArtist": "artist-a",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -153,10 +160,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2023,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-9",
@@ -179,6 +188,7 @@
           ],
           "displayAlbumArtist": "ärtist-c",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -198,10 +208,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2016,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-10",
@@ -224,6 +236,7 @@
           ],
           "displayAlbumArtist": "artist-a",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -243,10 +256,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2022,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-11",
@@ -269,6 +284,7 @@
           ],
           "displayAlbumArtist": "Various Artists",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "coverArt": "tr-11",
@@ -289,10 +305,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2020,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-12",
@@ -315,6 +333,7 @@
           ],
           "displayAlbumArtist": "Various Artists",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "coverArt": "tr-11",
@@ -335,10 +354,12 @@
           "track": 2,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2020,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         }
       ]
     }

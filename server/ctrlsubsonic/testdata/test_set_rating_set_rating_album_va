@@ -1,7 +1,7 @@
 {
   "subsonic-response": {
     "status": "ok",
-    "version": "1.15.0",
+    "version": "1.16.1",
     "type": "gonic",
     "serverVersion": "",
     "openSubsonic": true,
@@ -24,6 +24,7 @@
       "songCount": 2,
       "duration": 200,
       "playCount": 0,
+      "played": "",
       "genre": "Rock",
       "genres": [
         {
@@ -53,6 +54,7 @@
           ],
           "displayAlbumArtist": "Various Artists",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "coverArt": "tr-11",
@@ -73,12 +75,14 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2020,
           "musicBrainzId": "",
           "isrc": [],
           "userRating": 4,
           "averageRating": 4,
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-12",
@@ -101,6 +105,7 @@
           ],
           "displayAlbumArtist": "Various Artists",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "coverArt": "tr-11",
@@ -121,10 +126,12 @@
           "track": 2,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2020,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         }
       ],
       "isCompilation": true,
@@ -134,6 +141,8 @@
       ],
       "recordLabels": [],
       "discTitles": [],
+      "musicBrainzId": "",
+      "version": "Deluxe Edition",
       "userRating": 5,
       "averageRating": 5
     }

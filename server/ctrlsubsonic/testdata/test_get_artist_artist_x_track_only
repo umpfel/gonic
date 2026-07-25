@@ -1,7 +1,7 @@
 {
   "subsonic-response": {
     "status": "ok",
-    "version": "1.15.0",
+    "version": "1.16.1",
     "type": "gonic",
     "serverVersion": "",
     "openSubsonic": true,
@@ -9,6 +9,8 @@
       "id": "ar-20",
       "name": "artist-x",
       "albumCount": 1,
+      "musicBrainzId": "",
+      "disambiguation": "",
       "roles": [
         "artist"
       ],
@@ -32,6 +34,7 @@
           "songCount": 2,
           "duration": 200,
           "playCount": 0,
+          "played": "",
           "genre": "Rock",
           "genres": [
             {
@@ -45,7 +48,9 @@
             "Compilation"
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "",
+          "version": "Deluxe Edition"
         }
       ]
     }

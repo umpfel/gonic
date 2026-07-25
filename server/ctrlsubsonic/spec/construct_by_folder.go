@@ -47,6 +47,7 @@ func NewAlbumByFolder(f *AlbumRow) *Album {
 		Created:       f.CreatedAt,
 		AverageRating: f.AverageRating,
 		PlayCount:     int(math.Ceil(f.PlayCount)),
+		Played:        Time{f.PlayTime.Time},
 		Artists:       []*ArtistRef{},
 		ReleaseTypes:  []string{},
 		RecordLabels:  []*RecordLabel{},
@@ -71,6 +72,7 @@ func NewTCAlbumByFolder(f *AlbumRow) *TrackChild {
 	trCh := &TrackChild{
 		ID:            f.SID(),
 		IsDir:         true,
+		MediaType:     MediaTypeAlbum,
 		Title:         f.RightPath,
 		ParentID:      f.ParentSID(),
 		CreatedAt:     f.CreatedAt,
@@ -99,19 +101,20 @@ func NewTCAlbumByFolder(f *AlbumRow) *TrackChild {
 
 func NewTCTrackByFolder(t *TrackRow, parent *db.Album) *TrackChild {
 	trCh := &TrackChild{
-		ID:            t.SID(),
-		ContentType:   t.MIME(),
-		Suffix:        formatExt(t.Ext()),
-		Size:          t.Size,
-		Artists:       []*ArtistRef{},
-		AlbumArtists:  []*ArtistRef{},
-		Contributors:  []*Contributor{},
-		Genres:        []*GenreRef{},
-		ISRC:          []string{},
-		DisplayArtist: cmp.Or(t.TagTrackArtistCredit, t.TagTrackArtist),
-		Title:         cmp.Or(t.TagTitle, t.Filename),
-		TrackNumber:   t.TagTrackNumber,
-		DiscNumber:    t.TagDiscNumber,
+		ID:              t.SID(),
+		ContentType:     t.MIME(),
+		Suffix:          formatExt(t.Ext()),
+		Size:            t.Size,
+		Artists:         []*ArtistRef{},
+		AlbumArtists:    []*ArtistRef{},
+		Contributors:    []*Contributor{},
+		Genres:          []*GenreRef{},
+		ISRC:            []string{},
+		DisplayArtist:   cmp.Or(t.TagTrackArtistCredit, t.TagTrackArtist),
+		DisplayComposer: cmp.Or(t.TagComposerCredit, t.TagComposer),
+		Title:           cmp.Or(t.TagTitle, t.Filename),
+		TrackNumber:     t.TagTrackNumber,
+		DiscNumber:      t.TagDiscNumber,
 		Path: filepath.Join(
 			parent.LeftPath,
 			parent.RightPath,
@@ -121,7 +124,8 @@ func NewTCTrackByFolder(t *TrackRow, parent *db.Album) *TrackChild {
 		Duration:      t.Length,
 		Bitrate:       t.Bitrate,
 		IsDir:         false,
-		Type:          "music",
+		Type:          TypeMusic,
+		MediaType:     MediaTypeSong,
 		MusicBrainzID: t.TagBrainzID,
 		CreatedAt:     t.CreatedAt,
 		AverageRating: t.AverageRating,
@@ -152,6 +156,7 @@ func NewTCTrackByFolder(t *TrackRow, parent *db.Album) *TrackChild {
 	}
 	if t.Play != nil {
 		trCh.PlayCount = int(math.Ceil(t.Play.Count))
+		trCh.Played = Time{t.Play.Time}
 	}
 	if len(t.Genres) > 0 {
 		trCh.Genre = t.Genres[0].Name
@@ -198,7 +203,8 @@ func NewTCPodcastEpisode(pe *db.PodcastEpisode) *TrackChild {
 		Duration:     pe.Length,
 		Bitrate:      pe.Bitrate,
 		IsDir:        false,
-		Type:         "podcastepisode",
+		Type:         TypePodcastEpisode,
+		MediaType:    MediaTypeSong,
 		CreatedAt:    pe.CreatedAt,
 		Album:        pe.Album,
 		Artist:       pe.Artist,

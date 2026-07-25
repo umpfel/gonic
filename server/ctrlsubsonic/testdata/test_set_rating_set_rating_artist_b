@@ -1,7 +1,7 @@
 {
   "subsonic-response": {
     "status": "ok",
-    "version": "1.15.0",
+    "version": "1.16.1",
     "type": "gonic",
     "serverVersion": "",
     "openSubsonic": true,
@@ -9,6 +9,8 @@
       "id": "ar-17",
       "name": "artist-b",
       "albumCount": 3,
+      "musicBrainzId": "",
+      "disambiguation": "",
       "roles": [
         "albumartist",
         "artist"
@@ -32,6 +34,7 @@
           "songCount": 1,
           "duration": 100,
           "playCount": 0,
+          "played": "",
           "genre": "Jazz",
           "genres": [
             {
@@ -44,7 +47,9 @@
             "Single"
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "00000000-0000-0000-0000-0000000000ba",
+          "version": "Deluxe Edition"
         },
         {
           "id": "al-8",
@@ -68,6 +73,7 @@
           "songCount": 1,
           "duration": 100,
           "playCount": 0,
+          "played": "",
           "genre": "Pop",
           "genres": [
             {
@@ -81,6 +87,8 @@
           ],
           "recordLabels": [],
           "discTitles": [],
+          "musicBrainzId": "",
+          "version": "Deluxe Edition",
           "starred": "2020-06-02T12:00:00Z"
         },
         {
@@ -105,6 +113,7 @@
           "songCount": 1,
           "duration": 100,
           "playCount": 0,
+          "played": "",
           "genre": "Pop",
           "genres": [
             {
@@ -117,7 +126,9 @@
             "Album"
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "",
+          "version": "Deluxe Edition"
         }
       ],
       "userRating": 3,

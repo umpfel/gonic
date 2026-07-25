@@ -1,7 +1,7 @@
 {
   "subsonic-response": {
     "status": "ok",
-    "version": "1.15.0",
+    "version": "1.16.1",
     "type": "gonic",
     "serverVersion": "",
     "openSubsonic": true,
@@ -25,6 +25,7 @@
           "songCount": 1,
           "duration": 100,
           "playCount": 0,
+          "played": "",
           "genre": "Jazz",
           "genres": [
             {
@@ -37,7 +38,9 @@
             "Single"
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "00000000-0000-0000-0000-0000000000ba",
+          "version": "Deluxe Edition"
         }
       ]
     }

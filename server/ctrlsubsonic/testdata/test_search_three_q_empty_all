@@ -1,7 +1,7 @@
 {
   "subsonic-response": {
     "status": "ok",
-    "version": "1.15.0",
+    "version": "1.16.1",
     "type": "gonic",
     "serverVersion": "",
     "openSubsonic": true,
@@ -12,6 +12,8 @@
           "name": "artist-a",
           "coverArt": "ar-1",
           "albumCount": 6,
+          "musicBrainzId": "",
+          "disambiguation": "",
           "roles": [
             "albumartist",
             "artist"
@@ -24,6 +26,8 @@
           "id": "ar-17",
           "name": "artist-b",
           "albumCount": 3,
+          "musicBrainzId": "",
+          "disambiguation": "",
           "roles": [
             "albumartist",
             "artist"
@@ -33,6 +37,8 @@
           "id": "ar-18",
           "name": "ärtist-c",
           "albumCount": 1,
+          "musicBrainzId": "",
+          "disambiguation": "",
           "roles": [
             "albumartist",
             "artist"
@@ -42,6 +48,8 @@
           "id": "ar-19",
           "name": "Various Artists",
           "albumCount": 1,
+          "musicBrainzId": "",
+          "disambiguation": "",
           "roles": [
             "albumartist"
           ]
@@ -60,13 +68,16 @@
           "songCount": 0,
           "duration": 0,
           "playCount": 0,
+          "played": "",
           "genres": [],
           "isCompilation": false,
           "releaseTypes": [
             ""
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "",
+          "version": ""
         },
         {
           "id": "al-2",
@@ -80,13 +91,16 @@
           "songCount": 0,
           "duration": 0,
           "playCount": 0,
+          "played": "",
           "genres": [],
           "isCompilation": false,
           "releaseTypes": [
             ""
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "",
+          "version": ""
         },
         {
           "id": "al-3",
@@ -106,6 +120,7 @@
           "songCount": 3,
           "duration": 300,
           "playCount": 7,
+          "played": "2020-07-01T12:00:00Z",
           "genre": "Rock",
           "genres": [
             {
@@ -122,6 +137,8 @@
           ],
           "recordLabels": [],
           "discTitles": [],
+          "musicBrainzId": "00000000-0000-0000-0000-0000000000aa",
+          "version": "Deluxe Edition",
           "starred": "2020-05-01T12:00:00Z",
           "userRating": 4,
           "averageRating": 4
@@ -145,6 +162,7 @@
           "songCount": 2,
           "duration": 200,
           "playCount": 2,
+          "played": "2020-08-02T12:00:00Z",
           "genre": "Rock",
           "genres": [
             {
@@ -177,6 +195,8 @@
               "title": "Disc Two"
             }
           ],
+          "musicBrainzId": "00000000-0000-0000-0000-0000000000ab",
+          "version": "Deluxe Edition",
           "averageRating": 5
         },
         {
@@ -191,13 +211,16 @@
           "songCount": 0,
           "duration": 0,
           "playCount": 0,
+          "played": "",
           "genres": [],
           "isCompilation": false,
           "releaseTypes": [
             ""
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "",
+          "version": ""
         },
         {
           "id": "al-6",
@@ -217,6 +240,7 @@
           "songCount": 1,
           "duration": 100,
           "playCount": 0,
+          "played": "",
           "genre": "Jazz",
           "genres": [
             {
@@ -229,7 +253,9 @@
             "Single"
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "00000000-0000-0000-0000-0000000000ba",
+          "version": "Deluxe Edition"
         },
         {
           "id": "al-7",
@@ -243,13 +269,16 @@
           "songCount": 0,
           "duration": 0,
           "playCount": 0,
+          "played": "",
           "genres": [],
           "isCompilation": false,
           "releaseTypes": [
             ""
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "",
+          "version": ""
         },
         {
           "id": "al-8",
@@ -273,6 +302,7 @@
           "songCount": 1,
           "duration": 100,
           "playCount": 0,
+          "played": "",
           "genre": "Pop",
           "genres": [
             {
@@ -286,6 +316,8 @@
           ],
           "recordLabels": [],
           "discTitles": [],
+          "musicBrainzId": "",
+          "version": "Deluxe Edition",
           "starred": "2020-06-02T12:00:00Z"
         },
         {
@@ -300,13 +332,16 @@
           "songCount": 0,
           "duration": 0,
           "playCount": 0,
+          "played": "",
           "genres": [],
           "isCompilation": false,
           "releaseTypes": [
             ""
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "",
+          "version": ""
         },
         {
           "id": "al-10",
@@ -330,6 +365,7 @@
           "songCount": 1,
           "duration": 100,
           "playCount": 0,
+          "played": "",
           "genre": "Pop",
           "genres": [
             {
@@ -342,7 +378,9 @@
             "Album"
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "",
+          "version": "Deluxe Edition"
         },
         {
           "id": "al-11",
@@ -356,13 +394,16 @@
           "songCount": 0,
           "duration": 0,
           "playCount": 0,
+          "played": "",
           "genres": [],
           "isCompilation": false,
           "releaseTypes": [
             ""
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "",
+          "version": ""
         },
         {
           "id": "al-12",
@@ -382,6 +423,7 @@
           "songCount": 1,
           "duration": 100,
           "playCount": 0,
+          "played": "",
           "genre": "Rock",
           "genres": [
             {
@@ -394,7 +436,9 @@
             "Album"
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "",
+          "version": "Deluxe Edition"
         },
         {
           "id": "al-13",
@@ -408,13 +452,16 @@
           "songCount": 0,
           "duration": 0,
           "playCount": 0,
+          "played": "",
           "genres": [],
           "isCompilation": false,
           "releaseTypes": [
             ""
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "",
+          "version": ""
         },
         {
           "id": "al-14",
@@ -428,13 +475,16 @@
           "songCount": 0,
           "duration": 0,
           "playCount": 0,
+          "played": "",
           "genres": [],
           "isCompilation": false,
           "releaseTypes": [
             ""
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "",
+          "version": ""
         },
         {
           "id": "al-15",
@@ -454,6 +504,7 @@
           "songCount": 1,
           "duration": 100,
           "playCount": 0,
+          "played": "",
           "genre": "Rock",
           "genres": [
             {
@@ -466,7 +517,9 @@
             "Album"
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "",
+          "version": "Deluxe Edition"
         },
         {
           "id": "al-16",
@@ -480,13 +533,16 @@
           "songCount": 0,
           "duration": 0,
           "playCount": 0,
+          "played": "",
           "genres": [],
           "isCompilation": false,
           "releaseTypes": [
             ""
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "",
+          "version": ""
         },
         {
           "id": "al-17",
@@ -507,6 +563,7 @@
           "songCount": 2,
           "duration": 200,
           "playCount": 0,
+          "played": "",
           "genre": "Rock",
           "genres": [
             {
@@ -520,7 +577,9 @@
             "Compilation"
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "",
+          "version": "Deluxe Edition"
         },
         {
           "id": "al-18",
@@ -540,6 +599,7 @@
           "songCount": 0,
           "duration": 0,
           "playCount": 0,
+          "played": "",
           "genres": [],
           "year": 2015,
           "isCompilation": false,
@@ -547,7 +607,9 @@
             "Album"
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "",
+          "version": ""
         }
       ],
       "song": [
@@ -572,6 +634,7 @@
           ],
           "displayAlbumArtist": "artist-a",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -594,6 +657,7 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2018,
           "musicBrainzId": "00000000-0000-0000-0000-aa0000000000",
           "isrc": [],
@@ -603,7 +667,8 @@
             "albumGain": -4,
             "albumPeak": 0.99
           },
-          "playCount": 3
+          "playCount": 3,
+          "played": "2020-07-01T12:00:00Z"
         },
         {
           "id": "tr-2",
@@ -626,6 +691,7 @@
           ],
           "displayAlbumArtist": "artist-a",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -645,6 +711,7 @@
           "track": 2,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2018,
           "musicBrainzId": "00000000-0000-0000-0000-aa0000000001",
           "isrc": [],
@@ -654,7 +721,8 @@
             "albumGain": -4,
             "albumPeak": 0.99
           },
-          "playCount": 3
+          "playCount": 3,
+          "played": "2020-07-01T12:00:00Z"
         },
         {
           "id": "tr-3",
@@ -677,6 +745,7 @@
           ],
           "displayAlbumArtist": "artist-a",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -696,6 +765,7 @@
           "track": 3,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2018,
           "musicBrainzId": "00000000-0000-0000-0000-aa0000000002",
           "isrc": [],
@@ -705,7 +775,8 @@
             "albumGain": -4,
             "albumPeak": 0.99
           },
-          "playCount": 3
+          "playCount": 3,
+          "played": "2020-07-01T12:00:00Z"
         },
         {
           "id": "tr-4",
@@ -792,6 +863,7 @@
               }
             }
           ],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "coverArt": "al-4",
@@ -815,6 +887,7 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2019,
           "musicBrainzId": "00000000-0000-0000-0000-ab00000000d1",
           "isrc": [],
@@ -822,7 +895,8 @@
           "userRating": 3,
           "averageRating": 4.33,
           "replayGain": null,
-          "playCount": 1
+          "playCount": 1,
+          "played": "2020-08-02T12:00:00Z"
         },
         {
           "id": "tr-5",
@@ -888,6 +962,7 @@
               }
             }
           ],
+          "displayComposer": "Composer C!",
           "bitRate": 100,
           "contentType": "audio/flac",
           "coverArt": "al-4",
@@ -908,11 +983,13 @@
           "track": 1,
           "discNumber": 2,
           "type": "music",
+          "mediaType": "song",
           "year": 2019,
           "musicBrainzId": "",
           "isrc": [],
           "replayGain": null,
-          "playCount": 1
+          "playCount": 1,
+          "played": "2020-08-02T12:00:00Z"
         },
         {
           "id": "tr-6",
@@ -935,6 +1012,7 @@
           ],
           "displayAlbumArtist": "The Mighty B (LP)",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -954,10 +1032,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2017,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-7",
@@ -988,6 +1068,7 @@
           ],
           "displayAlbumArtist": "artist-a",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -1007,10 +1088,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2021,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-8",
@@ -1041,6 +1124,7 @@
           ],
           "displayAlbumArtist": "artist-a",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -1060,10 +1144,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2023,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-9",
@@ -1086,6 +1172,7 @@
           ],
           "displayAlbumArtist": "ärtist-c",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -1105,10 +1192,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2016,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-10",
@@ -1131,6 +1220,7 @@
           ],
           "displayAlbumArtist": "artist-a",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -1150,10 +1240,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2022,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-11",
@@ -1176,6 +1268,7 @@
           ],
           "displayAlbumArtist": "Various Artists",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "coverArt": "tr-11",
@@ -1196,10 +1289,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2020,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-12",
@@ -1222,6 +1317,7 @@
           ],
           "displayAlbumArtist": "Various Artists",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "coverArt": "tr-11",
@@ -1242,10 +1338,12 @@
           "track": 2,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2020,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         }
       ]
     }

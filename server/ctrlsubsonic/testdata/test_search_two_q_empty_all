@@ -1,7 +1,7 @@
 {
   "subsonic-response": {
     "status": "ok",
-    "version": "1.15.0",
+    "version": "1.16.1",
     "type": "gonic",
     "serverVersion": "",
     "openSubsonic": true,
@@ -52,19 +52,22 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "created": "2019-11-30T00:00:00Z",
           "genres": [],
           "isDir": true,
           "isVideo": false,
           "parent": "al-2",
           "title": "album-aa",
+          "mediaType": "album",
           "year": 2018,
           "musicBrainzId": "",
           "isrc": [],
           "starred": "2020-05-01T12:00:00Z",
           "userRating": 4,
           "averageRating": 4,
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "al-4",
@@ -74,6 +77,7 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "coverArt": "al-4",
           "created": "2019-11-30T00:00:00Z",
           "genres": [],
@@ -81,11 +85,13 @@
           "isVideo": false,
           "parent": "al-2",
           "title": "album-ab",
+          "mediaType": "album",
           "year": 2019,
           "musicBrainzId": "",
           "isrc": [],
           "averageRating": 5,
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "al-6",
@@ -95,16 +101,19 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "created": "2019-11-30T00:00:00Z",
           "genres": [],
           "isDir": true,
           "isVideo": false,
           "parent": "al-5",
           "title": "album-ba",
+          "mediaType": "album",
           "year": 2017,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "al-8",
@@ -114,17 +123,20 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "created": "2019-11-30T00:00:00Z",
           "genres": [],
           "isDir": true,
           "isVideo": false,
           "parent": "al-7",
           "title": "album-collab",
+          "mediaType": "album",
           "year": 2021,
           "musicBrainzId": "",
           "isrc": [],
           "starred": "2020-06-02T12:00:00Z",
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "al-8",
@@ -134,17 +146,20 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "created": "2019-11-30T00:00:00Z",
           "genres": [],
           "isDir": true,
           "isVideo": false,
           "parent": "al-7",
           "title": "album-collab",
+          "mediaType": "album",
           "year": 2021,
           "musicBrainzId": "",
           "isrc": [],
           "starred": "2020-06-02T12:00:00Z",
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "al-10",
@@ -154,16 +169,19 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "created": "2019-11-30T00:00:00Z",
           "genres": [],
           "isDir": true,
           "isVideo": false,
           "parent": "al-9",
           "title": "album-split",
+          "mediaType": "album",
           "year": 2023,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "al-10",
@@ -173,16 +191,19 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "created": "2019-11-30T00:00:00Z",
           "genres": [],
           "isDir": true,
           "isVideo": false,
           "parent": "al-9",
           "title": "album-split",
+          "mediaType": "album",
           "year": 2023,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "al-12",
@@ -192,16 +213,19 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "created": "2019-11-30T00:00:00Z",
           "genres": [],
           "isDir": true,
           "isVideo": false,
           "parent": "al-11",
           "title": "album-ca",
+          "mediaType": "album",
           "year": 2016,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "al-15",
@@ -211,16 +235,19 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "created": "2019-11-30T00:00:00Z",
           "genres": [],
           "isDir": true,
           "isVideo": false,
           "parent": "al-14",
           "title": "album-cross",
+          "mediaType": "album",
           "year": 2022,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "al-17",
@@ -230,6 +257,7 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "coverArt": "tr-11",
           "created": "2019-11-30T00:00:00Z",
           "genres": [],
@@ -237,10 +265,12 @@
           "isVideo": false,
           "parent": "al-16",
           "title": "comp",
+          "mediaType": "album",
           "year": 2020,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "al-18",
@@ -250,16 +280,19 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "created": "2019-11-30T00:00:00Z",
           "genres": [],
           "isDir": true,
           "isVideo": false,
           "parent": "al-2",
           "title": "empty-album",
+          "mediaType": "album",
           "year": 2015,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         }
       ],
       "song": [
@@ -279,6 +312,7 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -301,6 +335,7 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2018,
           "musicBrainzId": "00000000-0000-0000-0000-aa0000000000",
           "isrc": [],
@@ -310,7 +345,8 @@
             "albumGain": -4,
             "albumPeak": 0.99
           },
-          "playCount": 3
+          "playCount": 3,
+          "played": "2020-07-01T12:00:00Z"
         },
         {
           "id": "tr-2",
@@ -328,6 +364,7 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -347,6 +384,7 @@
           "track": 2,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2018,
           "musicBrainzId": "00000000-0000-0000-0000-aa0000000001",
           "isrc": [],
@@ -356,7 +394,8 @@
             "albumGain": -4,
             "albumPeak": 0.99
           },
-          "playCount": 3
+          "playCount": 3,
+          "played": "2020-07-01T12:00:00Z"
         },
         {
           "id": "tr-3",
@@ -374,6 +413,7 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -393,6 +433,7 @@
           "track": 3,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2018,
           "musicBrainzId": "00000000-0000-0000-0000-aa0000000002",
           "isrc": [],
@@ -402,7 +443,8 @@
             "albumGain": -4,
             "albumPeak": 0.99
           },
-          "playCount": 3
+          "playCount": 3,
+          "played": "2020-07-01T12:00:00Z"
         },
         {
           "id": "tr-4",
@@ -420,6 +462,7 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "coverArt": "al-4",
@@ -443,6 +486,7 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2019,
           "musicBrainzId": "00000000-0000-0000-0000-ab00000000d1",
           "isrc": [],
@@ -450,7 +494,8 @@
           "userRating": 3,
           "averageRating": 4.33,
           "replayGain": null,
-          "playCount": 1
+          "playCount": 1,
+          "played": "2020-08-02T12:00:00Z"
         },
         {
           "id": "tr-5",
@@ -468,6 +513,7 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "Composer C!",
           "bitRate": 100,
           "contentType": "audio/flac",
           "coverArt": "al-4",
@@ -488,11 +534,13 @@
           "track": 1,
           "discNumber": 2,
           "type": "music",
+          "mediaType": "song",
           "year": 2019,
           "musicBrainzId": "",
           "isrc": [],
           "replayGain": null,
-          "playCount": 1
+          "playCount": 1,
+          "played": "2020-08-02T12:00:00Z"
         },
         {
           "id": "tr-6",
@@ -510,6 +558,7 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -529,10 +578,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2017,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-7",
@@ -554,6 +605,7 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -573,10 +625,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2021,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-8",
@@ -598,6 +652,7 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -617,10 +672,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2023,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-9",
@@ -638,6 +695,7 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -657,10 +715,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2016,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-10",
@@ -678,6 +738,7 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "created": "2019-11-30T00:00:00Z",
@@ -697,10 +758,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2022,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-11",
@@ -718,6 +781,7 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "coverArt": "tr-11",
@@ -738,10 +802,12 @@
           "track": 1,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2020,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         },
         {
           "id": "tr-12",
@@ -759,6 +825,7 @@
           "albumArtists": [],
           "displayAlbumArtist": "",
           "contributors": [],
+          "displayComposer": "",
           "bitRate": 100,
           "contentType": "audio/flac",
           "coverArt": "tr-11",
@@ -779,10 +846,12 @@
           "track": 2,
           "discNumber": 1,
           "type": "music",
+          "mediaType": "song",
           "year": 2020,
           "musicBrainzId": "",
           "isrc": [],
-          "replayGain": null
+          "replayGain": null,
+          "played": ""
         }
       ]
     }

@@ -70,6 +70,7 @@ type AlbumRow struct {
 	ChildCount    int
 	Duration      int
 	PlayCount     float64
+	PlayTime      db.ScanTime
 	AverageRating float64
 }
 

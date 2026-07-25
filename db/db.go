@@ -11,6 +11,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/araddon/dateparse"
 	"github.com/jinzhu/gorm"
 
 	// TODO: remove this dep
@@ -245,6 +246,8 @@ type Track struct {
 	TagTitleUDec         string         `sql:"default: null"`
 	TagTrackArtist       string         `sql:"default: null"`
 	TagTrackArtistCredit string         `sql:"default: null"` // set when ARTIST_CREDIT differs from ARTIST
+	TagComposer          string         `sql:"default: null"`
+	TagComposerCredit    string         `sql:"default: null"` // set when COMPOSER_CREDIT differs from COMPOSER
 	TagTrackNumber       int            `sql:"default: null"`
 	TagDiscNumber        int            `sql:"default: null"`
 	TagBrainzID          string         `sql:"default: null"`
@@ -360,6 +363,7 @@ type Album struct {
 	TagYear              int            `sql:"default: null"`
 	TagCompilation       bool           `sql:"default: null"`
 	TagReleaseType       string         `sql:"default: null"`
+	TagVersion           string         `sql:"default: null"`
 	Labels               []*AlbumLabel  `gorm:"foreignkey:album_id"`
 	Tracks               []*Track
 	AlbumStar            *AlbumStar
@@ -556,7 +560,8 @@ type PodcastEpisode struct {
 	CreatedAt   time.Time
 	UpdatedAt   time.Time
 	ModifiedAt  time.Time
-	PodcastID   int `gorm:"not null" sql:"default: null; type:int REFERENCES podcasts(id) ON DELETE CASCADE"`
+	PodcastID   int    `gorm:"not null" sql:"default: null; type:int REFERENCES podcasts(id) ON DELETE CASCADE"`
+	GUID        string `gorm:"index"`
 	Title       string
 	Description string
 	PublishDate *time.Time
@@ -679,6 +684,36 @@ type AlbumInfo struct {
 	LastFMURL                 string
 	MusicBrainzID             string
 	MusicBrainzDisambiguation string
+}
+
+// ScanTime scans time columns computed from SQL expressions like max(...), which have no
+// declared type, so drivers return them as raw text instead of converting to time.Time.
+type ScanTime struct {
+	time.Time
+}
+
+func (st *ScanTime) Scan(value any) error {
+	switch v := value.(type) {
+	case nil:
+		return nil
+	case time.Time:
+		st.Time = v
+	case []byte:
+		t, err := dateparse.ParseAny(string(v))
+		if err != nil {
+			return fmt.Errorf("parse time %q: %w", v, err)
+		}
+		st.Time = t
+	case string:
+		t, err := dateparse.ParseAny(v)
+		if err != nil {
+			return fmt.Errorf("parse time %q: %w", v, err)
+		}
+		st.Time = t
+	default:
+		return fmt.Errorf("unsupported time type %T", value)
+	}
+	return nil
 }
 
 func splitIDs(in, sep string) []specid.ID {

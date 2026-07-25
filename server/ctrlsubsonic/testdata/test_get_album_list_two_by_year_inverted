@@ -1,7 +1,7 @@
 {
   "subsonic-response": {
     "status": "ok",
-    "version": "1.15.0",
+    "version": "1.16.1",
     "type": "gonic",
     "serverVersion": "",
     "openSubsonic": true,
@@ -29,6 +29,7 @@
           "songCount": 2,
           "duration": 200,
           "playCount": 0,
+          "played": "",
           "genre": "Pop",
           "genres": [
             {
@@ -42,6 +43,8 @@
           ],
           "recordLabels": [],
           "discTitles": [],
+          "musicBrainzId": "",
+          "version": "Deluxe Edition",
           "starred": "2020-06-02T12:00:00Z"
         },
         {
@@ -63,6 +66,7 @@
           "songCount": 2,
           "duration": 200,
           "playCount": 0,
+          "played": "",
           "genre": "Rock",
           "genres": [
             {
@@ -76,7 +80,9 @@
             "Compilation"
           ],
           "recordLabels": [],
-          "discTitles": []
+          "discTitles": [],
+          "musicBrainzId": "",
+          "version": "Deluxe Edition"
         },
         {
           "id": "al-4",
@@ -97,6 +103,7 @@
           "songCount": 2,
           "duration": 200,
           "playCount": 2,
+          "played": "2020-08-02T12:00:00Z",
           "genre": "Rock",
           "genres": [
             {
@@ -129,6 +136,8 @@
               "title": "Disc Two"
             }
           ],
+          "musicBrainzId": "00000000-0000-0000-0000-0000000000ab",
+          "version": "Deluxe Edition",
           "averageRating": 5
         },
         {
@@ -149,6 +158,7 @@
           "songCount": 3,
           "duration": 300,
           "playCount": 7,
+          "played": "2020-07-01T12:00:00Z",
           "genre": "Rock",
           "genres": [
             {
@@ -165,6 +175,8 @@
           ],
           "recordLabels": [],
           "discTitles": [],
+          "musicBrainzId": "00000000-0000-0000-0000-0000000000aa",
+          "version": "Deluxe Edition",
           "starred": "2020-05-01T12:00:00Z",
           "userRating": 4,
           "averageRating": 4
