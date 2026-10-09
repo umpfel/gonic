@@ -780,6 +780,41 @@ func scrobbleStatsUpdatePodcastEpisode(dbc *db.DB, peID int) error {
 	return nil
 }
 
+// findAlbumPage finds one page of albums, ordered and filtered by q. it pages the album ids
+// first so that load - which selects the expensive per album aggregates - runs for that page
+// only, then restores the page's order.
+func findAlbumPage(q *gorm.DB, offset, limit int, load func(*gorm.DB) *gorm.DB) ([]*spec.AlbumRow, error) {
+	var ids []int
+	if err := q.
+		Model(&db.Album{}).
+		Group("albums.id").
+		Offset(offset).
+		Limit(limit).
+		Pluck("albums.id", &ids).
+		Error; err != nil {
+		return nil, fmt.Errorf("find album ids: %w", err)
+	}
+
+	var albums []*spec.AlbumRow
+	if err := q.New().
+		Scopes(load).
+		Where("albums.id IN (?)", ids).
+		Find(&albums).
+		Error; err != nil {
+		return nil, fmt.Errorf("find albums: %w", err)
+	}
+
+	positions := make(map[int]int, len(ids))
+	for i, id := range ids {
+		positions[id] = i
+	}
+	slices.SortFunc(albums, func(a, b *spec.AlbumRow) int {
+		return cmp.Compare(positions[a.ID], positions[b.ID])
+	})
+
+	return albums, nil
+}
+
 func getMusicFolder(musicPaths []MusicPath, p params.Params) string {
 	idx, err := p.GetInt("musicFolderId")
 	if err != nil {
@@ -789,6 +824,23 @@ func getMusicFolder(musicPaths []MusicPath, p params.Params) string {
 		return os.DevNull
 	}
 	return musicPaths[idx].Path
+}
+
+// buildFuzzy converts a Subsonic search query into a SQL LIKE pattern.
+// A trailing "*" is treated as a prefix wildcard (clients such as iSub append
+// it to signal "starts with"): "Abigail*" → "abigail%". Without a trailing
+// "*", a substring pattern is returned: "foo bar" → "%foo%bar%".
+func buildFuzzy(query string) string {
+	prefix := strings.HasSuffix(query, "*")
+	if prefix {
+		query = query[:len(query)-1]
+	}
+	fuzzy := strings.Join(strings.Fields(query), "%")
+	fuzzy = strings.ToLower(fuzzy)
+	if prefix {
+		return fuzzy + "%"
+	}
+	return "%" + fuzzy + "%"
 }
 
 func lowerUDecOrHash(in string) string {
